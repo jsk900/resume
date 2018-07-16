@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Bitter");
 
-
 body, html {
   height: 100%;
   margin: 0;
@@ -18,15 +17,15 @@ body, html {
 }
 
 .image1 {
-  background-image: url(images/bg1.png);
+  background-image: url(images/bg1.jpg);
   min-height: 100%;
 }
 
 .image1 span {
-  animation: yourAnimation 1.5s forwards 0s ease-in;
+  animation: textAnim 1.5s forwards 0s ease-in;
 }
 
-@keyframes yourAnimation{
+@keyframes textAnim {
     0%{
         opacity: 0;
         }
@@ -36,18 +35,18 @@ body, html {
 
 
 .image2 {
-  background-image: url(images/bg2.png);
+  background-image: url(images/bg2.jpg);
   min-height: 600px;
 }
 
 .image3 {
-  background-image: url(images/bg3.png);
+  background-image: url(images/bg3.jpg);
   min-height: 600px;
   text-align: center;
 }
 
 .image4 {
-  background-image: url(images/bg4.png);
+  background-image: url(images/bg4.jpg);
   min-height: 600px;
 }
 
@@ -89,6 +88,7 @@ body, html {
   width: 100%;
   text-align: center;
   letter-spacing: 8px;
+  /* mix-blend-mode: multiply; Cool transparent effect. Needs a lighter background. Not great here  */
 }
 
 .ptext .border {
@@ -127,24 +127,16 @@ body, html {
   color: #333;
 }
 
-.section-light h3 {
-  font-size: 80%;
-}
-
-.section-light p {
-  font-size: 80%;
-}
-
 .section-dark {
   background-color: #282e34;
   color: #ddd;
 }
 
-.section-dark h3 {
+.section-light h3, .section-dark h3 {
   font-size: 80%;
 }
 
-.section-dark p {
+.section-light p, .section-dark p {
   font-size: 80%;
 }
 
@@ -153,6 +145,10 @@ body, html {
   width: 80%;
   height: 800px;
   margin: auto;
+}
+
+.container img:hover {
+  filter:brightness(120%);
 }
 
 .img_container {
@@ -173,109 +169,53 @@ body, html {
   filter:brightness(80%);
 }
 
-.tooltip {
+.tooltip, .tooltip2, .tooltip3 {
   position: relative;
   z-index: 20;
 }
 
-.tooltip span {
+.tooltip span, .tooltip2 span, .tooltip3 span {
   opacity: 0;
   transform: scale(0);
 }
 
-.tooltip:hover {
+.tooltip:hover, .tooltip2:hover, .tooltip3:hover {
   z-index: 21;
+}
+
+.tooltip:hover span, .tooltip2:hover span, .tooltip3:hover span {
+  display: block;
+  font-size: 14px;
+  color: #ddd;
+  line-height: normal;
+  text-align: center;
+  background-color: #111;
+  text-decoration: none;
+  position: absolute;
+  left: -2%;
+  border-radius: 8px;
+  opacity: 1;
+  transform: scale(1);
+  transition: all ease-out 250ms;
 }
 
 .tooltip:hover span {
-  display: block;
   width: 320px;
   padding: 8px;
-  font-size: 14px;
-  color: #ddd;
-  line-height: normal;
-  text-align: center;
-  background-color: #111;
-  text-decoration: none;
-  position: absolute;
-  left: -2%;
-  border-radius: 8px;
-  opacity: 1;
-  transform: scale(1);
-  transition: all ease-out 250ms;
-}
-
-.tooltip2 {
-  position: relative;
-  z-index: 20;
-}
-
-.tooltip2 span {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.tooltip2:hover {
-  z-index: 21;
 }
 
 .tooltip2:hover span {
-  display: block;
   width: 85px;
   padding: 2px 8px;
-  font-size: 14px;
-  color: #ddd;
-  line-height: normal;
-  text-align: center;
-  background-color: #111;
-  text-decoration: none;
-  position: absolute;
-  left: -2%;
-  border-radius: 8px;
-  opacity: 1;
-  transform: scale(1);
-  transition: all ease-out 250ms;
-}
-
-.tooltip3 {
-  position: relative;
-  z-index: 20;
-}
-
-.tooltip3 span {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.tooltip3:hover {
-  z-index: 21;
 }
 
 .tooltip3:hover span {
-  display: block;
   width: auto;
   padding: 8px;
-  font-size: 14px;
-  color: #ddd;
-  line-height: normal;
-  text-align: center;
-  background-color: #111;
-  text-decoration: none;
-  position: absolute;
-  left: -2%;
-  border-radius: 8px;
-  opacity: 1;
-  transform: scale(1);
-  transition: all ease-out 250ms;
 }
-
-.container img:hover {
-  filter:brightness(120%);
-}
-
 
 @media(max-width: 568px){
-  .image1, .image2, .image3 {
+  .image1, .image2, .image3, .image4 {
     background-attachment: scroll;
   }
 }
