@@ -154,11 +154,11 @@ body, html {
 .img_container {
   position: relative;
   margin: auto;
-  top: calc(60% - 155px);
+  top: calc(50% - 155px);
   width: 960px;
   display: grid;
   grid-template-columns: repeat(3, 320px);
-  grid-template-rows: repeat(2, 155px);
+  grid-template-rows: repeat(3, 155px);
 }
 
 .img_container img {
